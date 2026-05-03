@@ -19,9 +19,7 @@ from utils.election_data import (
 )
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Test 1: Data formatting — format_dates_for_display
-# ──────────────────────────────────────────────────────────────────────────────
 
 class TestFormatDatesForDisplay:
     """Tests for the Markdown table formatter."""
@@ -58,9 +56,7 @@ class TestFormatDatesForDisplay:
             assert d["event"] in result
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Test 2: Mock Gemini API — send_message
-# ──────────────────────────────────────────────────────────────────────────────
 
 class TestGeminiAPIIntegration:
     """Tests that mock the Gemini API to verify chat flow."""
@@ -95,9 +91,7 @@ class TestGeminiAPIIntegration:
             send_message(mock_chat, "Tell me about voting")
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Test 3: Static data integrity
-# ──────────────────────────────────────────────────────────────────────────────
 
 class TestStaticDataIntegrity:
     """Ensure static data modules return well-structured data."""

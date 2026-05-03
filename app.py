@@ -18,9 +18,7 @@ from utils.election_data import (
     format_dates_for_display,
 )
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Page Configuration
-# ──────────────────────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Election Buddy — Election Education Assistant",
     page_icon="🗳️",
@@ -28,9 +26,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Custom CSS — Premium dark theme polish
-# ──────────────────────────────────────────────────────────────────────────────
+# Custom CSS
 st.markdown("""
 <style>
     /* ── Global ────────────────────────────────────────── */
@@ -112,9 +108,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Cached data loaders — avoids repeated computation / API calls
-# ──────────────────────────────────────────────────────────────────────────────
+# Cached data loaders
 
 @st.cache_data(show_spinner=False)
 def load_election_dates() -> list[dict]:
@@ -134,9 +128,7 @@ def load_quick_facts() -> list[str]:
     return get_quick_facts()
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Session state initialisation
-# ──────────────────────────────────────────────────────────────────────────────
 
 def init_session_state() -> None:
     """Initialise all session-state keys if they don't exist yet."""
@@ -150,9 +142,7 @@ def init_session_state() -> None:
         st.session_state.api_configured = False
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Sidebar
-# ──────────────────────────────────────────────────────────────────────────────
 
 def render_sidebar() -> None:
     """Render the sidebar with quick facts and navigation."""
@@ -185,9 +175,7 @@ def render_sidebar() -> None:
         st.caption("Built with ❤️ using Streamlit & Google Gemini")
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Main content sections
-# ──────────────────────────────────────────────────────────────────────────────
 
 def render_header() -> None:
     """Render the main page header and introduction."""
@@ -258,9 +246,7 @@ def render_metrics() -> None:
         )
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Chat interface
-# ──────────────────────────────────────────────────────────────────────────────
 
 def setup_gemini() -> bool:
     """Attempt to configure the Gemini model. Returns True on success.
@@ -330,9 +316,7 @@ def handle_user_input() -> None:
                     st.error(f"❌ {exc}", icon="🚫")
 
 
-# ──────────────────────────────────────────────────────────────────────────────
 # Main App Orchestration
-# ──────────────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     """Main entry point — composes all UI sections."""

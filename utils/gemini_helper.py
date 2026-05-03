@@ -10,9 +10,7 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# ---------------------------------------------------------------------------
 # Configuration
-# ---------------------------------------------------------------------------
 
 # Load environment variables from .env (no-op in Cloud Run where env is set)
 load_dotenv()

@@ -1,9 +1,5 @@
-# =============================================================
-# Dockerfile — Election Buddy (Cloud Run Optimized)
-# =============================================================
-# Multi-stage thinking but kept single-stage for Streamlit
-# simplicity. Uses slim base to minimize image size.
-# =============================================================
+# Dockerfile for Election Buddy
+# Optimized for Google Cloud Run
 
 FROM python:3.12-slim
 
